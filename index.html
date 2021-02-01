@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Pokedex Vanilla</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -399,6 +399,8 @@
             let $fragment = document.createDocumentFragment();
 
             $row.innerHTML = "";
+
+            document.querySelector(".card-filter").value = "";
 
             try {
                 document.getElementsByTagName("main")[0].insertAdjacentHTML("afterbegin",`<img class="loader" src="tail-spin.svg" alt="Cargando..." />`);
