@@ -1,7 +1,3 @@
-import hola from"./getTypes.js";
-
-hola()
-
 let baseUrl = "https://pokeapi.co/api/v2/";
         let isMenuOpen = false;
 
@@ -138,13 +134,11 @@ let baseUrl = "https://pokeapi.co/api/v2/";
                     })
                     
                 }
-            
                     let debilidadesFiltered = [...new Set(debilidadesArray)];
 
                     debilidadesFiltered.forEach(e => {
                         document.querySelector(".debilidades").appendChild(typeLabel(e));
                     })
-                
             })
            
             document.querySelector(".modal figure img").src = pokemonResume.imagen;
@@ -287,6 +281,8 @@ let baseUrl = "https://pokeapi.co/api/v2/";
 
             $row.innerHTML = "";
 
+            document.querySelector(".card-filter").value = "";
+
             try {
                 document.getElementsByTagName("main")[0].insertAdjacentHTML("afterbegin",`<img class="loader" src="tail-spin.svg" alt="Cargando..." />`);
                 let res = await fetch(`${baseUrl}generation/${id}`);
@@ -399,7 +395,6 @@ let baseUrl = "https://pokeapi.co/api/v2/";
                 let cancelVoice = true;
                 getDetailPokemon(cancelVoice);
             }
-           
         })
 
         function searchFilters(input, selector) {
